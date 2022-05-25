@@ -1,3 +1,4 @@
+import { TeamComponent } from './team/team.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,6 +11,7 @@ import { Error404Component } from './error404/error404.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateAnonceComponent } from './create-anonce/create-anonce.component';
+import { AnnonceComponent } from './annonce/annonce.component';
 
 
 
@@ -20,7 +22,9 @@ import { CreateAnonceComponent } from './create-anonce/create-anonce.component';
     FooterComponent,
     AccueilComponent,
     Error404Component,
-    CreateAnonceComponent
+    CreateAnonceComponent,
+    AnnonceComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
