@@ -41,11 +41,7 @@
   <!-- Topbar Start -->
   <div class="container-fluid">
     <div class="row py-3 px-lg-5">
-        <div class="col-lg-4 ">
-            <a href="" class="navbar-brand d-none d-lg-block">
-                <h1 class="m-0 display-5 text-capitalize" ><span class="text-primary">Pet</span>4You</h1>
-            </a>
-        </div>
+      
        
     </div>
 </div>
@@ -59,17 +55,27 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-2" id="navbarCollapse">
             <div class="navbar-nav mr-auto py-0">
-               
+              <!-- <div class="col-lg-4 ">
+                <a href="" class="navbar-brand d-none d-lg-block">
+                    <h1 class="m-0 display-5 text-capitalize" ><span class="text-primary">Pet</span>4You</h1>
+                </a>
+            </div> -->
+              <div>
+              <!-- position-absolute top-0 end-0 !important -->
+                <h1 class="m-0 display-5 text-capitalize " ><span class="text-primary">Pet</span><span style="color: white;">4You</span></h1>
+              </div>
+              
                 <a href="" class="nav-item nav-link">Annonce</a>
-                <div class="nav-item dropdown">
+                <div class="nav-item dropdown " id="droite">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">  Trouver Animal </a>
-                    <div class="dropdown-menu rounded-0 m-0">
+                    <div class="dropdown-menu rounded-0 m-0 ">
                         <a href="" class="dropdown-item">Adoption</a>
                         <a href="" class="dropdown-item">Accouplement</a>
                     </div>
                 </div>
-                <a href="" class="nav-item nav-link active">Contact</a>
-            </div>
+                <a href="" class="nav-item nav-link active  position-absolute top-0 end-0 !important"> <i class="fa-solid fa-right-to-bracket"></i> login</a>
+                
+                </div>
             <!-- <a href="" class="btn btn-lg btn-primary px-3 d-none d-lg-block">Get Quote</a> -->
         </div>
     </nav>
