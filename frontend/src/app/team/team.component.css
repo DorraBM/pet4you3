@@ -1,6 +1,6 @@
 section.our-team {
     padding: 70px 0px;
-    background-color:#ED6436;
+    background-color:white;
     text-align: center;
     color: #fff;
 }
@@ -22,17 +22,17 @@ img{
 }
 .our-team h2 {
     font-size: 36px;
-    color: #795548;
+    color: #ED6436;
     font-weight: normal;
     
 }
 .our-team p {
-    color: #9e9e9e;
+    color: #ED6436;
     width: 70%;
     margin: 10px auto 10px;
 }
 .our-team .member:hover {
-    box-shadow: 0px 10px 0px 0px #795548;
+    box-shadow: 0px 10px 0px 0px #ED6436;
 }
 .our-team .member .member-info {
     position: absolute;
