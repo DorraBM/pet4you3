@@ -1,15 +1,13 @@
 import { Error404Component } from './error404/error404.component';
-import { FooterComponent } from './footer/footer.component';
-import { NavbarComponent } from './navbar/navbar.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateAnonceComponent } from './create-anonce/create-anonce.component';
+import { AnnonceComponent } from './annonce/annonce.component';
 
 const routes: Routes = [
   {path:'accueil',component:AccueilComponent},
-  {path:'navbar',component:NavbarComponent},
-  {path:'footer',component:FooterComponent},
+  {path:'annonce',component:AnnonceComponent},
   {path:'ajouter',component:CreateAnonceComponent},
   {path:'',redirectTo:'accueil',pathMatch:'full'},
   {path:'**',component:Error404Component}
