@@ -1,3 +1,4 @@
+import { TeamComponent } from './team/team.component';
 import { Error404Component } from './error404/error404.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path:'navbar',component:NavbarComponent},
   {path:'footer',component:FooterComponent},
   {path:'ajouter',component:CreateAnonceComponent},
+  {path:'team',component:TeamComponent},
   {path:'',redirectTo:'accueil',pathMatch:'full'},
   {path:'**',component:Error404Component}
 
