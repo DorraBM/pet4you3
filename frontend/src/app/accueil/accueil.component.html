@@ -30,18 +30,19 @@
 <div class="container-fluid py-2" style=" overflow-x:scroll ;overflow-y: scroll;">
 <div class="d-flex flex-row flex-nowrap"   >
 
-  <a [routerLink]="['/annonce',annoncedata[index].id_annonce]" style="text-decoration: none;">
-   <div class="crd"  *ngFor="let a of annoncedata" style="margin-left: 2%;margin-top: 1% ; ">
+  
+   <div class="crd"  *ngFor="let a of annoncedata;index as index" style="margin-left: 2%;margin-top: 1% ; ">
       <div class="class" style="width: 18rem; margin-left: 1%;">
          <img [src]="a.image" class="card-img-top im" alt="...">
            <div class="card-body">
          <h5 class="card-title">{{a.titre}}</h5>
          <p class="card-text">{{a.categorie}}  izdhiah diaz</p>
          <a href="#" class="btn btn-primary">Go somewhere</a>
+         <a [routerLink]="['/annonce',annoncedata[index].id_annonce]" style="text-decoration: none;">link</a>
            </div>
       </div>
    </div>
-  </a>
+
 </div>
    
 <h2 style="margin-left: 80%;"> more -></h2>
