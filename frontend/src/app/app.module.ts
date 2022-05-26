@@ -1,3 +1,4 @@
+import { TeamComponent } from './team/team.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -22,7 +23,8 @@ import { AnnonceComponent } from './annonce/annonce.component';
     AccueilComponent,
     Error404Component,
     CreateAnonceComponent,
-    AnnonceComponent
+    AnnonceComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

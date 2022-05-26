@@ -1,24 +1,94 @@
+
+
+
 <app-navbar></app-navbar>
 
 <a href="/ajouter">ajouter</a>
-
+<!--
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6 col-lg-6" *ngFor="let a of annoncedata">
-      <div class="card" style="width: 18rem">
-        <img [src]="a.image" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">{{ a.titre }}</h5>
-          <p class="card-text">{{ a.categorie }}</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+ <div class="row" >
+     <div class="col-xs-12 col-sm-6 col-lg-6" *ngFor="let a of annoncedata">
+
+ <div class="col-2">
+
+        <div class="class " style="width: 18rem;">
+            <img [src]="a.image" class="card-img-top im" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{a.titre}}</h5>
+              <p class="card-text">{{a.categorie}}</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+
         </div>
+     </div>
+ </div>
+</div> -->
+
+<h1 style="margin-left: 10%; color:rgb(255, 135, 14);font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Pets for Adoption <i style="color:rgb(62, 62, 255) ;" class="fas fa-paw"></i></h1>
+<br>
+<div class="container-fluid py-2" style=" overflow-x:scroll ;overflow-y: scroll;">
+<div class="d-flex flex-row flex-nowrap"   >
+
+  
+   <div class="crd"  *ngFor="let a of annoncedata;index as index" style="margin-left: 2%;margin-top: 1% ; ">
+      <div class="class" style="width: 18rem; margin-left: 1%;">
+         <img [src]="a.image" class="card-img-top im" alt="...">
+           <div class="card-body">
+         <h5 class="card-title">{{a.titre}}</h5>
+         <p class="card-text">{{a.categorie}}  izdhiah diaz</p>
+         <a href="#" class="btn btn-primary">Go somewhere</a>
+         <a [routerLink]="['/annonce',annoncedata[index].id_annonce]" style="text-decoration: none;">link</a>
+           </div>
       </div>
-    </div>
-  </div>
+   </div>
+
 </div>
-<app-footer></app-footer>
+   
+<h2 style="margin-left: 80%;"> more -></h2>
+
+</div>
+<br><br>
+<h1 style="margin-left: 10%; color:rgb(255, 135, 14);font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Pets for Accouplement <i style="color:rgb(62, 62, 255) ;" class="fas fa-paw"></i></h1>
+<br>
+<div class="row" style="overflow-x: scroll;overflow-y: visible;">
+
+
+   <div class="col-2 crd" *ngFor="let a of annoncedata" style="margin-left: 2%;margin-top: 1% ;display: flex; overflow-x: scroll;">
+      <div class="class" style="width: 18rem; margin-left: 1%;">
+         <img [src]="a.image" class="card-img-top im" alt="...">
+           <div class="card-body">
+         <h5 class="card-title">{{a.titre}}</h5>
+         <p class="card-text">{{a.categorie}}  izdhiah diaz</p>
+         <a href="#" class="btn btn-primary" >Go somewhere</a>
+           </div>
+      </div>
+   </div>
+   
+   
+<h2 style="margin-left: 80%;"> more -></h2>
+
+</div>
+
+
+<!--test scroll-->
+<!--
+<div class="horizontal-scroll-wrapper squares">
+  <div>item 1</div>
+  <div>item 2</div>
+  <div>item 3</div>
+  <div>item 4</div>
+  <div>item 5</div>
+  <div>item 6</div>
+  <div>item 7</div>
+  <div>item 8</div>
+</div>
+-->
+
+
+
+
 <!--Salut c'est Mondher-->
 <!--Bonjour c dorra-->
 <!-- sarra  -->
 <!--maissa kouki-->
-<!-- hiinour -->
