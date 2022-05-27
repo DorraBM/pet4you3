@@ -15,6 +15,8 @@ export class AccueilComponent implements OnInit {
    errorsMsg:any;
    successMsg:any;
    deleteMsg:any;
+   adoptionData:any;
+   accouplementData:any;
 
  
 

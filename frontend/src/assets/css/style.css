@@ -5,7 +5,7 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
-:root {
+ :root {
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
@@ -9756,12 +9756,13 @@ h6 {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  padding: 30px 20px;
+  padding: 50px 20px;
   font-size: 18px;
   letter-spacing: 1px;
   color: #F2F2F4;
   outline: none;
 }
+
 
 .navbar-dark .navbar-nav .nav-link:hover,
 .navbar-dark .navbar-nav .nav-link.active {

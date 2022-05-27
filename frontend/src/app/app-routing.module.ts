@@ -11,6 +11,7 @@ import { MoreAccoupComponent } from './more-accoup/more-accoup.component';
 const routes: Routes = [
   {path:'accueil',component:AccueilComponent},
   {path:'annonce',component:AnnonceComponent},
+  {path:'annonce/:id',component:AnnonceComponent},
   {path:'ajouter',component:CreateAnonceComponent},
   {path:'team',component:TeamComponent},
   {path:'plusAdop',component:MoreAdopComponent},
