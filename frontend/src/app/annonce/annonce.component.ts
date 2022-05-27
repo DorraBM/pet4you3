@@ -11,16 +11,19 @@ export class AnnonceComponent implements OnInit {
 
   constructor(private activateRoute:ActivatedRoute, private service:AnnonceServiceService,private router:Router) { }
   id:number;
-  annonceData:any;
-
+  a:any;
+  num:boolean = false;
   ngOnInit(): void {
     this.id=this.activateRoute.snapshot.params['id'];
     this.service.getSingleData(this.id).subscribe(
       (res)=>{
-        this.annonceData=res.data;
+        this.a=res.data[0];
       }
     )
   
+  }
+  affiche(){
+    this.num=!this.num;
   }
 
 }
