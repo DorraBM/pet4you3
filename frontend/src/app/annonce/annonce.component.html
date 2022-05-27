@@ -1,5 +1,120 @@
 <app-navbar></app-navbar>
 
-<p>annonce works!</p>
-{{annonceData[0].titre}}
+
+
+
+<div class="container-fluid">
+<div class="row">
+    <div class="col-sm" style=" height: 500px;">
+        <div style="padding-top: 100px;">
+            <h1>{{a.nom}}</h1>
+            <img src="{{a.image}}">
+        </div>
+      
+    </div>
+<div class="col" style="background-color: white; height: 500px;">
+
+    <div style="padding-top: 100px;" >
+        <div class="product-dtl">
+            <div class="product-info">
+                <div class="product-name text-capitalize" style="color:#125341"> {{a.nom}} , {{a.age}} ans </div>
+                <p><i class="fa fa-calendar"></i> 23 Mai 2022</p>
+                                            
+            </div>
+            <p> {{a.description}}</p>
+
+       
+                <!-- Wishlist And Compare -->
+                <div class="btn-options">
+                    <i class="fa fa-map-marker" style="padding-right: 20px"></i>9 Rue du parc, la Soukra
+                </div>
+                <br>
+                
+                                                <div class="product-meta mt--30">
+                    <p>Espèce: <span style="color:orangered"> {{a.categorie}}</span></p>
+                    <p>Sexe: 
+                        <span   *ngIf="a.sexe=='Male', else femelle" style="color:blue"><i class="fas fa-mars"></i></span>
+                        <ng-template #femelle ><span style="color:red"><i class="fas fa-venus"></i></span></ng-template>
+
+                    </p>
+                    <p>Vacciné :
+                        <span *ngIf="a.vaccin , else non" style="color:orangered"> Oui</span>
+                        <ng-template #non><span style="color:orangered">Non</span></ng-template>
+                    </p>
+                </div>
+                                            
+
+                <button aria-label="Signaler l'annonce" style="
+                    --tw-text-opacity: 1!important;
+                    color: rgb(248 113 113/var(--tw-text-opacity))!important;" class="btn normal-case font-bold border-none rounded-lg
+                bg-blue-100 text-blue-500 font-medium border-none hover:bg-blue-100 w-max
+                !w-full !text-red-400 !bg-red-50 hover:!text-error mt-2"><span class="flex h-full w-full items-center gap-x-1 gap-y-[2.5px] flex-row"><span class="ml-0 mr-0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.2" baseProfile="tiny" viewBox="0 0 24 24" height="18" width="18" xmlns="http://www.w3.org/2000/svg"><path d="M21.171 15.398l-5.912-9.854c-.776-1.293-1.963-2.033-3.259-2.033s-2.483.74-3.259 2.031l-5.912 9.856c-.786 1.309-.872 2.705-.235 3.83.636 1.126 1.878 1.772 3.406 1.772h12c1.528 0 2.77-.646 3.406-1.771.637-1.125.551-2.521-.235-3.831zm-9.171 2.151c-.854 0-1.55-.695-1.55-1.549 0-.855.695-1.551 1.55-1.551s1.55.696 1.55 1.551c0 .854-.696 1.549-1.55 1.549zm1.633-7.424c-.011.031-1.401 3.468-1.401 3.468-.038.094-.13.156-.231.156s-.193-.062-.231-.156l-1.391-3.438c-.09-.233-.129-.443-.129-.655 0-.965.785-1.75 1.75-1.75s1.75.785 1.75 1.75c0 .212-.039.422-.117.625z"></path></svg></span><span class="sm:ml-0.5 justify-center flex w-full">Signaler l'annonce</span></span></button>                        
+        </div>
+    </div>
+</div>
+
+<div class="col-lg" >
+
+    <section class="vh-100" >
+        <div class="container py-5 h-100">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-md-12 ">
+      
+              <div class="card" style="border-radius: 15px;">
+                <div class="card-body text-center">
+                  <div class="mt-3 mb-4">
+                    <img src="./assets/img/walid2.jpg"
+                      class="rounded-circle img-fluid" style="width: 100px;" />
+                  </div>
+                  <h4 class="mb-2">Walid B. Abid</h4>
+                  <p class="text-muted mb-4">@KibdaTN <span class="mx-2">|</span> <a
+                      href="#!">Signaler</a></p>
+                  <div class="mb-4 pb-2">
+                    <button type="button" class="btn btn-outline-primary btn-floating">
+                      <i class="fab fa-facebook-f fa-lg"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary btn-floating">
+                      <i class="fab fa-twitter fa-lg"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-primary btn-floating">
+                      <i class="fab fa-skype fa-lg"></i>
+                    </button>
+                  </div>
+                  <button type="button" class="btn btn-primary btn-rounded btn-lg">
+                    <i class=" fas fa-message fa-sm"></i>        Envoyer message 
+                  </button> <br><br>
+                  
+                  <button type="button" *ngIf="!num" (click)="affiche()" class="btn btn-danger btn-rounded btn-lg">
+                    <i class="fas fa-phone"></i> Afficher Numéro
+                  </button>
+                  <button disabled *ngIf="num" class="btn btn-success btn-rounded btn-lg">
+                      +216 22 650 656 
+                  </button>
+                  <div class="d-flex justify-content-between text-center mt-5 mb-2">
+                    <div>
+                      <p class="mb-2 h5">3</p>
+                      <p class="text-muted mb-0">annonces créées</p>
+                    </div>
+                    <div class="px-3">
+                      <p class="mb-2 h5">20</p>
+                      <p class="text-muted mb-0">ans</p>
+                    </div>
+                    <div>
+                      <p class="mb-2 h5">0</p>
+                      <p class="text-muted mb-0">avertissements</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+      
+            </div>
+          </div>
+        </div>
+      </section>
+
+</div>
+</div>
+</div>
+
+
 <app-footer></app-footer>
