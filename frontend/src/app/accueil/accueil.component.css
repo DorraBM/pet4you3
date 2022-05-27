@@ -4,48 +4,24 @@
 
 .im{
     max-width: 250px;
-     height: 150px; 
+     height: 180px; 
      object-fit: cover;
       border-radius: 8px;
 }
 
 .crd{
-    transition: all 0.7s;   
+    transition: all 0.7s; 
+   
+   
 }
 .crd:hover{
     transform: scale(1.06) ;
     cursor: pointer;
 }
 
-
-.horizontal-scroll-wrapper{
-  
-  display:block;
- 
-  width:600px;
-  max-height:500px;
-  margin:0;
-  background:#abc;
-  overflow-y:auto;
-  overflow-x:hidden;
-  transform:rotate(-90deg) ;
-  
-}
-.horizontal-scroll-wrapper > div{
-  display:block;
-  
-  padding:5px;
-  background:#cab;
-  transform:rotate(90deg) translate(200px);
-  transform-origin: right top;
+.more:hover{
+  cursor: pointer; 
 }
 
-.squares{
-  padding:60px 0 0 0;
-}
 
-.squares > div{
-  width:200px;
-  height:200px;
-  margin:100px;
-}
+
