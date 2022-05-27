@@ -8,3 +8,10 @@
     top: 0px;
     right: 600px;
 }
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}

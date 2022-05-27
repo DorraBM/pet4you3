@@ -16,7 +16,11 @@ export class AnnonceServiceService {
       {
         return this.http.get(`${this.URL}`);
       }
-
+      //get single data
+      getSingleData(id:number):Observable<any>
+      {
+        return this.http.get(this.URL+"/"+id);
+      }
     //create data
       createData(data:any):Observable<any>
       {
