@@ -66,9 +66,12 @@
         >
           nom is required
         </div>
-        <div *ngIf="nom.errors?.pattern &&nom.dirty" class="alert alert-warning">
-          nom invalid 
-       </div>
+        <div
+          *ngIf="nom.errors?.pattern && nom.dirty"
+          class="alert alert-warning"
+        >
+          nom invalid
+        </div>
         <div class="form-group">
           <label>Age*</label>
           <input
@@ -84,7 +87,7 @@
         >
           age is required
         </div>
-       
+
         <div class="d-flex justify-content-between">
           <div class="form-group">
             <button
@@ -184,8 +187,12 @@
               précedent
             </button>
           </div>
-          <div class="form-group" >
-            <button class="btn btn-success" [disabled]="annonceForm.invalid" (click)="ajouter()">
+          <div class="form-group">
+            <button
+              class="btn btn-success"
+              [disabled]="annonceForm.invalid"
+              (click)="ajouter()"
+            >
               Partager Annonce
             </button>
           </div>
@@ -198,7 +205,7 @@
     class="alert alert-warning alert-dismissible fade show"
     role="alert"
   >
-    <strong>parfait!</strong> votre annonce a bien ajouté 
+    <strong>parfait!</strong> votre annonce a bien ajouté
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>

@@ -11,6 +11,8 @@ export class AnnonceServiceService {
 
      //connect front end to backend 
       URL='http://localhost:3000/annonce';
+      URLAdoption='http://localhost:3000/adoption';
+      URLAccouplement='http://localhost:3000/accouplement';
     //get all data
       getAllData():Observable<any>
       {
@@ -21,6 +23,16 @@ export class AnnonceServiceService {
       {
         return this.http.get(this.URL+"/"+id);
       }
+       //get adoption data
+       getAdoptionData():Observable<any>
+       {
+         return this.http.get(`${this.URLAdoption}`);
+       }
+        //get accouplement data
+        getAccouplementData():Observable<any>
+        {
+          return this.http.get(`${this.URLAccouplement}`);
+        }
     //create data
       createData(data:any):Observable<any>
       {

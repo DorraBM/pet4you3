@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CreateAnonceComponent } from './create-anonce/create-anonce.component';
 import { AnnonceComponent } from './annonce/annonce.component';
+import { MoreAdopComponent } from './more-adop/more-adop.component';
+import { MoreAccoupComponent } from './more-accoup/more-accoup.component';
 
 const routes: Routes = [
   {path:'accueil',component:AccueilComponent},
@@ -12,6 +14,8 @@ const routes: Routes = [
   {path:'annonce/:id',component:AnnonceComponent},
   {path:'ajouter',component:CreateAnonceComponent},
   {path:'team',component:TeamComponent},
+  {path:'plusAdop',component:MoreAdopComponent},
+  {path:'plusAccoup',component:MoreAccoupComponent},
   {path:'',redirectTo:'accueil',pathMatch:'full'},
   {path:'**',component:Error404Component}
 
