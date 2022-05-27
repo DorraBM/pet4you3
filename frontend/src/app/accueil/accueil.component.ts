@@ -10,6 +10,8 @@ export class AccueilComponent implements OnInit {
 
   constructor(private annonceServise:AnnonceServiceService) { }
    annoncedata:any;
+   adopdata:any;
+   accoupdata:any;
    errorsMsg:any;
    successMsg:any;
    deleteMsg:any;
@@ -19,7 +21,7 @@ export class AccueilComponent implements OnInit {
   ngOnInit(): void {
     //get all data
      this.getAllData();
-  
+    this.getAdopAccoup();
     
   }
 
@@ -43,6 +45,18 @@ export class AccueilComponent implements OnInit {
       console.log(res,"res==>");
       this.annoncedata=res.data; });
   }
+
+// get adop and accoup
+ getAdopAccoup(){
+for(let i=0;i<this.annoncedata.length;i++){
+if (this.annoncedata[i].titre=="adoption"){
+ this.adopdata.push(this.annoncedata[i]);
+}
+else {
+this.accoupdata.push(this.annoncedata[i]);
+}
+}
+  } 
 
 
 }

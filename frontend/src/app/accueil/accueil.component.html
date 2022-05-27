@@ -3,7 +3,8 @@
 
 <app-navbar></app-navbar>
 
-<a href="/ajouter">ajouter</a>
+
+
 <!--
 <div class="container">
  <div class="row" >
@@ -24,21 +25,21 @@
      </div>
  </div>
 </div> -->
-
+<!--
 <h1 style="margin-left: 10%; color:rgb(255, 135, 14);font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Pets for Adoption <i style="color:rgb(62, 62, 255) ;" class="fas fa-paw"></i></h1>
 <br>
-<div class="container-fluid py-2" style=" overflow-x:scroll ;overflow-y: scroll;">
-<div class="d-flex flex-row flex-nowrap"   >
+<div class="container-fluid py-2">
+<div class="d-flex flex-row flex-nowrap overflow-auto"   >
 
   
-   <div class="crd"  *ngFor="let a of annoncedata;index as index" style="margin-left: 2%;margin-top: 1% ; ">
+   <div class="crd  "  *ngFor="let a of annoncedata;index as index" style="margin-left: 2%;margin-top: 1% ; ">
       <div class="class" style="width: 18rem; margin-left: 1%;">
          <img [src]="a.image" class="card-img-top im" alt="...">
            <div class="card-body">
          <h5 class="card-title">{{a.titre}}</h5>
          <p class="card-text">{{a.categorie}}  izdhiah diaz</p>
-         <a href="#" class="btn btn-primary">Go somewhere</a>
-         <a [routerLink]="['/annonce',annoncedata[index].id_annonce]" style="text-decoration: none;">link</a>
+         <a [routerLink]="['/annonce',annoncedata[index].id_annonce]" class="btn btn-primary">Go somewhere</a>
+         <a  style="text-decoration: none;">link</a>
            </div>
       </div>
    </div>
@@ -67,6 +68,105 @@
    
    
 <h2 style="margin-left: 80%;"> more -></h2>
+
+</div>
+
+<br><br>   -->
+<!-- test 2  -->
+<br><br><br>
+<h1 style="margin-left: 10%; color:rgb(255, 135, 14);font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Pets for Adoption <i style="color:rgb(62, 62, 255) ;" class="fas fa-paw"></i></h1>
+<br>
+<div class="container-fluid py-2">
+<div class="row" style="display: flex;"   >
+
+  
+   <div class="crd col-2"   style="margin-left: 2%;margin-top: 1% ; ">
+      <div class="class " style="width: 18rem; margin-left: 1%;">
+         <img [src]="adopdata[0].image" class="card-img-top im" alt="...">
+           <div class="card-body">
+         <h5 class="card-title">{{adopdata[0].titre}}</h5>
+         <p class="card-text">{{adopdata[0].categorie}}  izdhiah diaz</p>
+         <a [routerLink]="['/annonce',adopdata[0].id_annonce]" class="btn btn-primary">Go somewhere</a>
+         <a  style="text-decoration: none;">link</a>
+           </div>
+      </div>
+</div>
+<div class="crd col-2"   style="margin-left: 2%;margin-top: 1% ; ">
+      <div class="class " style="width: 18rem; margin-left: 1%;">
+        <img [src]="annoncedata[1].image" class="card-img-top im" alt="...">
+          <div class="card-body">
+        <h5 class="card-title">{{annoncedata[1].titre}}</h5>
+        <p class="card-text">{{annoncedata[1].categorie}}  izdhiah diaz</p>
+        <a [routerLink]="['/annonce',annoncedata[1].id_annonce]" class="btn btn-primary">Go somewhere</a>
+        <a  style="text-decoration: none;">link</a>
+          </div>
+     </div>
+     </div>
+
+     <div class="crd col-2"   style="margin-left: 2%;margin-top: 1% ; ">
+     <div class="class" style="width: 18rem; margin-left: 1%;">
+      <img [src]="annoncedata[2].image" class="card-img-top im" alt="...">
+        <div class="card-body">
+      <h5 class="card-title">{{annoncedata[2].titre}}</h5>
+      <p class="card-text">{{annoncedata[2].categorie}}  izdhiah diaz</p>
+      <a [routerLink]="['/annonce',annoncedata[2].id_annonce]" class="btn btn-primary">Go somewhere</a>
+      <a  style="text-decoration: none;">link</a>
+        </div>
+   </div>
+   </div>
+
+   <div class="crd col-2"   style="margin-left: 2%;margin-top: 1% ; ">
+   <div class="class" style="width: 18rem; margin-left: 1%;">
+    <img [src]="annoncedata[3].image" class="card-img-top im" alt="...">
+      <div class="card-body">
+    <h5 class="card-title">{{annoncedata[3].titre}}</h5>
+    <p class="card-text">{{annoncedata[3].categorie}}  izdhiah diaz</p>
+    <a [routerLink]="['/annonce',annoncedata[3].id_annonce]" class="btn btn-primary">Go somewhere</a>
+    <a  style="text-decoration: none;">link</a>
+      </div>
+ </div>
+ </div>
+
+ <div class="crd col-2"   style="margin-left: 2%;margin-top: 1% ; ">
+ <div class="class" style="width: 18rem; margin-left: 1%;">
+  <img [src]="annoncedata[4].image" class="card-img-top im" alt="...">
+    <div class="card-body">
+  <h5 class="card-title">{{annoncedata[4].titre}}</h5>
+  <p class="card-text">{{annoncedata[4].categorie}}  izdhiah diaz</p>
+  <a [routerLink]="['/annonce',annoncedata[4].id_annonce]" class="btn btn-primary">Go somewhere</a>
+  <a  style="text-decoration: none;">link</a>
+    </div>
+</div>
+</div>
+
+   
+
+   
+
+</div>
+   
+<h2 style="margin-left: 80%;" class="more"><a routerLink="/plusAdop">plus</a> </h2>
+
+</div>
+<br><br>
+<h1 style="margin-left: 10%; color:rgb(255, 135, 14);font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Pets for Accouplement <i style="color:rgb(62, 62, 255) ;" class="fas fa-paw"></i></h1>
+<br>
+<div style="overflow-y: auto; display: flex; ">
+
+
+   <div class="crd" *ngFor="let a of accoupdata;index as ind" style="margin-left: 2%;margin-top: 1% ;">
+      <div class="class" style=" width:250px; margin-left: 10%;" *ngIf="ind < 5">
+         <img [src]="a.image" class="card-img-top im" alt="...">
+           <div class="card-body">
+         <h5 class="card-title">{{a.titre}}</h5>
+         <p class="card-text">{{a.categorie}}  izdhiah diaz</p>
+         <a href="#" class="btn btn-primary" >Go somewhere</a>
+           </div>
+      </div>
+   </div>
+   
+   
+<h2 style="margin-left: 80%;" class="more"><a routerLink="/plusAccoup">plus</a></h2>
 
 </div>
 
