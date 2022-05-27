@@ -28,7 +28,7 @@ db.connect(err=>{
 
 //get all data
 app.get('/annonce',(req,res)=>{
-      let  qr=`select * from annonce `;
+      let  qr=`select * from annonce where titre="adoption" `;
       db.query(qr,(err,result)=>{
           if(err)
           {
@@ -73,6 +73,48 @@ app.get('/annonce/:id',(req,res)=>{
     }
 
  })
+});
+
+//get adoption data
+app.get('/adoption',(req,res)=>{
+    let  qr=`select * from annonce where titre="adoption" `;
+    db.query(qr,(err,result)=>{
+        if(err)
+        {
+            console.log(err,'errs');
+        }
+
+        if(result.length>0)
+        {
+            res.send({
+                message:'all annonce data',
+                data:result
+            });
+        }
+
+    });
+
+});
+
+//get accouplement data
+app.get('/accouplement',(req,res)=>{
+    let  qr=`select * from annonce where titre="accouplement" `;
+    db.query(qr,(err,result)=>{
+        if(err)
+        {
+            console.log(err,'errs');
+        }
+
+        if(result.length>0)
+        {
+            res.send({
+                message:'all annonce data',
+                data:result
+            });
+        }
+
+    });
+
 });
 
 
