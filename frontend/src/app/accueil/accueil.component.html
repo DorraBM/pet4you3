@@ -84,11 +84,11 @@
   
    <div class="crd col-2"   style="margin-left: 2%;margin-top: 1% ; ">
       <div class="class " style="width: 18rem; margin-left: 1%;">
-         <img [src]="adopdata[0].image" class="card-img-top im" alt="...">
+         <img [src]="annoncedata[0].image" class="card-img-top im" alt="...">
            <div class="card-body">
-         <h5 class="card-title">{{adopdata[0].titre}}</h5>
-         <p class="card-text">{{adopdata[0].categorie}}  izdhiah diaz</p>
-         <a [routerLink]="['/annonce',adopdata[0].id_annonce]" class="btn btn-primary">Go somewhere</a>
+         <h5 class="card-title">{{annoncedata[0].titre}}</h5>
+         <p class="card-text">{{annoncedata[0].categorie}}  izdhiah diaz</p>
+         <a [routerLink]="['/annonce',annoncedata[0].id_annonce]" class="btn btn-primary">Go somewhere</a>
          <a  style="text-decoration: none;">link</a>
            </div>
       </div>
@@ -156,8 +156,9 @@
 <div style="overflow-y: auto; display: flex; ">
 
 
-   <div class="crd" *ngFor="let a of accoupdata;index as ind" style="margin-left: 2%;margin-top: 1% ;">
-      <div class="class" style=" width:250px; margin-left: 10%;" *ngIf="ind < 5">
+   <div class="crd" *ngFor="let a of annoncedata;index as i" style="margin-left: 2%;margin-top: 1% ;">
+      <div class="class" style=" width:250px; margin-left: 10%;" *ngIf="annoncedata[i].titre=='adoption' && ind<5 " >
+        <span style="display:none ;">{{fct}}</span>
          <img [src]="a.image" class="card-img-top im" alt="...">
            <div class="card-body">
          <h5 class="card-title">{{a.titre}}</h5>
@@ -165,8 +166,11 @@
          <a href="#" class="btn btn-primary" >Go somewhere</a>
            </div>
       </div>
+
+    
    </div>
    
+
    
 <h2 style="margin-left: 80%;" class="more"><a routerLink="/plusAccoup">plus</a></h2>
 

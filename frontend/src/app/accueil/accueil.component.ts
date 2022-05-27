@@ -10,20 +10,20 @@ export class AccueilComponent implements OnInit {
 
   constructor(private annonceServise:AnnonceServiceService) { }
    annoncedata:any;
-   adopdata:any;
-   accoupdata:any;
    errorsMsg:any;
    successMsg:any;
    deleteMsg:any;
    adoptionData:any;
    accouplementData:any;
-
+   adopdata:any[]=[];
+   accoupdata:any[]=[];
+  ind:number=0;
  
 
   ngOnInit(): void {
     //get all data
      this.getAllData();
-    this.getAdopAccoup();
+    //this.getAdopAccoup();
     
   }
 
@@ -46,10 +46,20 @@ export class AccueilComponent implements OnInit {
      this.annonceServise.getAllData().subscribe((res)=>{
       console.log(res,"res==>");
       this.annoncedata=res.data; });
+      for(let i=0;i<this.annoncedata.length();i++){
+        if (this.annoncedata[i].titre.toLowerCase()=="adoption"){
+         this.adopdata.push(this.annoncedata[i]);
+        }
+        else {
+        this.accoupdata.push(this.annoncedata[i]);
+        }
+        };
+
+        this.accoupdata.push("lala")
   }
 
 // get adop and accoup
- getAdopAccoup(){
+ /*getAdopAccoup(){
 for(let i=0;i<this.annoncedata.length;i++){
 if (this.annoncedata[i].titre=="adoption"){
  this.adopdata.push(this.annoncedata[i]);
@@ -58,7 +68,12 @@ else {
 this.accoupdata.push(this.annoncedata[i]);
 }
 }
-  } 
+  } */
+
+  //add ind
+  fct(){
+    this.ind=this.ind+1;
+  }
 
 
 }

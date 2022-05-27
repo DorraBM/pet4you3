@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateAnonceComponent } from './create-anonce/create-anonce.component';
 import { AnnonceComponent } from './annonce/annonce.component';
 import { CarousselComponent } from './caroussel/caroussel.component';
+import { MoreAdopComponent } from './more-adop/more-adop.component';
+import { MoreAccoupComponent } from './more-accoup/more-accoup.component';
 
 
 
@@ -26,7 +28,10 @@ import { CarousselComponent } from './caroussel/caroussel.component';
     CreateAnonceComponent,
     AnnonceComponent,
     TeamComponent,
-    CarousselComponent
+    CarousselComponent,
+    MoreAdopComponent,
+    MoreAccoupComponent
+    
   ],
   imports: [
     BrowserModule,
