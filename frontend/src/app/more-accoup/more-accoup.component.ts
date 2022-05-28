@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AnnonceServiceService } from '../annonce-service.service';
 
 @Component({
   selector: 'app-more-accoup',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoreAccoupComponent implements OnInit {
 
-  constructor() { }
+  constructor(private annonceServise:AnnonceServiceService) { }
+  accouplementData:any;
 
   ngOnInit(): void {
+
+    this.annonceServise.getAccouplementData().subscribe((res)=>{
+      console.log(res,"accouplement==>");
+      this.accouplementData=res.data;
+    });
   }
 
 }
