@@ -1,86 +1,216 @@
-
-
 <app-navbar></app-navbar>
 
 <!--formulaire ajouter annonce -->
 <div class="container">
-    <div *ngIf="errorsMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-    <form  [formGroup]="annonceForm" >
-       
-       <div class="form-group">
-        <label >Votre annonce concerne *</label>
-        <select class="form-control"  name="titre" formControlName="titre">
-          <option>Adoption</option>
-          <option>Accouplement</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label >Categorie d'animal *</label>
-        <select class="form-control"  name="categorie" formControlName="categorie">
-          <option>Chien</option>
-          <option>Chat</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label >Espece *</label>
-        <input class="form-control" formControlName="espece" type="text" placeholder="Entrer espece">
-      </div>
-      <div class="form-group">
-        <label >Nom de l'animal *</label>
-        <input class="form-control" formControlName="nom" type="text" placeholder="Entrer nom ">
-      </div>
-      <div class="form-group">
-        <label >Age*</label>
-        <input class="form-control" formControlName="age" type="number" placeholder="Entrer age">
-      </div>
-      <div class="form-group">
-        <label >Date de Naissance *</label>
-        <input class="form-control" formControlName="date_naissance" type="date">
-      </div>
-      <div class="form-group">
-        <label >Sexe *</label>
-        <select class="form-control"  name="sexe" formControlName="sexe">
-          <option>Femelle</option>
-          <option>Male</option>
-        </select>
-      </div>
-      <div class="form-group ">
-        <div class="form-check" >
-            
-            <input type="checkbox" class="form-check-input" formControlName="vaccin" >
-            <label class="form-check-label" >Vaccin</label>
+  <h1 class="text-center">
+    Creer Votre Annonce <i class="fa-solid fa-paw"></i>
+  </h1>
+  <div style="padding: 60px">
+    <form [formGroup]="annonceForm">
+      <div [hidden]="visible">
+        <div class="form-group">
+          <label>Votre annonce concerne <label style="color:red;">*</label></label>
+          <select class="form-control" name="titre" formControlName="titre">
+            <option>Adoption</option>
+            <option>Accouplement</option>
+          </select>
+        </div>
+        <div
+          *ngIf="titre.errors?.required && titre.touched"
+          class="alert alert-danger"
+        >
+          titre est obligatoire
+        </div>
+        <div class="form-group">
+          <label>Categorie d'animal <label style="color:red;">*</label></label>
+          <select
+            class="form-control"
+            name="categorie"
+            formControlName="categorie"
+          >
+            <option>Chien</option>
+            <option>Chat</option>
+          </select>
+        </div>
+        <div
+          *ngIf="categorie.errors?.required && categorie.touched"
+          class="alert alert-danger"
+        >
+          categorie est obligatoire
+        </div>
+        <div class="form-group">
+          <label>Espece <label style="color:red;">*</label></label>
+          <input
+            class="form-control"
+            formControlName="espece"
+            type="text"
+            placeholder="Entrer espece"
+          />
+        </div>
+        <div
+          *ngIf="espece.errors?.required && espece.touched"
+          class="alert alert-danger"
+        >
+          espece est obligatoire
+        </div>
+        <div class="form-group">
+          <label>Nom de l'animal <label style="color:red;">*</label></label>
+          <input
+            class="form-control"
+            formControlName="nom"
+            type="text"
+            placeholder="Entrer nom "
+          />
+        </div>
+        <div
+          *ngIf="nom.errors?.required && nom.touched"
+          class="alert alert-danger"
+        >
+          nom est obligatoire
+        </div>
+        <div
+          *ngIf="nom.errors?.pattern && nom.dirty"
+          class="alert alert-warning"
+        >
+          nom invalide
+        </div>
+        <div class="form-group">
+          <label>Age<label style="color:red;">*</label></label>
+          <input
+            class="form-control"
+            formControlName="age"
+            type="number"
+            placeholder="Entrer age"
+          />
+        </div>
+        <div
+          *ngIf="age.errors?.required && age.touched"
+          class="alert alert-danger"
+        >
+          age est obligatoire
+        </div>
+
+        <div class="d-flex justify-content-between">
+          <div class="form-group">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+              (click)="retourAcceuil()"
+            >
+              retour à l'acceuil
+            </button>
+          </div>
+          <div class="form-group">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+              (click)="hiddenT()"
+            >
+              suivant
+            </button>
+          </div>
         </div>
       </div>
-      <div class="form-group">
-        <label >Image *</label>
-        <input class="form-control" formControlName="image" type="text">
-      </div>
-      <div class="form-group">
-        <label >Lieu*</label>
-        <input class="form-control" formControlName="lieu" type="text">
-      </div>
-      <div class="form-group">
-        <label >Description</label>
-        <textarea class="form-control"  rows="3"></textarea>
-      </div>
-
-      <div class="form-group">
-          <button class="btn btn-success" (click)="ajouter()" >Partager Annonce</button>
+      <div [hidden]="hidden">
+        <div class="form-group">
+          <label>Date de Naissance <label style="color:red;">*</label></label>
+          <input
+            class="form-control"
+            formControlName="date_naissance"
+            type="date"
+          />
+        </div>
+        <div
+          *ngIf="date_naissance.errors?.required && date_naissance.touched"
+          class="alert alert-danger"
+        >
+          date de naissance est obligatoire
+        </div>
+        <div class="form-group">
+          <label>Sexe <label style="color:red;">*</label></label>
+          <select class="form-control" name="sexe" formControlName="sexe">
+            <option>Femelle</option>
+            <option>Male</option>
+          </select>
+        </div>
+        <div
+          *ngIf="sexe.errors?.required && sexe.touched"
+          class="alert alert-danger"
+        >
+          sexe est obligatoire
+        </div>
+        <div class="form-group">
+          <div class="form-check">
+            <input
+              type="checkbox"
+              class="form-check-input"
+              formControlName="vaccin"
+            />
+            <label class="form-check-label">Vaccin</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Image <label style="color:red;">*</label></label>
+          <input class="form-control" formControlName="image" type="text" />
+        </div>
+        <div
+          *ngIf="image.errors?.required && image.touched"
+          class="alert alert-danger"
+        >
+          image est obligatoire
+        </div>
+        <div class="form-group">
+          <label>Lieu<label style="color:red;">*</label></label>
+          <input class="form-control" formControlName="lieu" type="text" />
+        </div>
+        <div
+          *ngIf="lieu.errors?.required && lieu.touched"
+          class="alert alert-danger"
+        >
+          lieu est obligatoire
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea class="form-control" rows="3"></textarea>
+        </div>
+        <div class="d-flex justify-content-between">
+          <div class="form-group">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="alert"
+              aria-label="Close"
+              (click)="hiddenPrec()"
+            >
+              précedent
+            </button>
+          </div>
+          <div class="form-group">
+            <button
+              class="btn btn-success"
+              [disabled]="annonceForm.invalid"
+              (click)="ajouter()"
+            >
+              Partager Annonce
+            </button>
+          </div>
+        </div>
       </div>
     </form>
-    <div *ngIf="successMsg" class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-
   </div>
-
-  
-  <app-footer></app-footer>
+  <div
+    *ngIf="successMsg"
+    class="alert alert-warning alert-dismissible fade show"
+    role="alert"
+  >
+    <strong>parfait!</strong> votre annonce a bien ajouté
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+</div>
+<app-footer></app-footer>
