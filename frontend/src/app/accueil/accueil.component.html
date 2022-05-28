@@ -76,13 +76,16 @@
 <br><br>   -->
 <!-- test 2  -->
 <br><br><br>
-<h1 style="text-align: center; color:rgb(178, 178, 178);font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i  class="fas fa-paw"></i>  Adoption  <i  class="fas fa-paw"></i></h1>
+<h1 style="text-align: center; color:rgb(178, 178, 178);font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+  <i  class="fas fa-paw"></i> 
+   Adoption 
+   <i  class="fas fa-paw"></i>
+</h1>
 <hr style="height:4px;color: black;width: 420px;margin-left: 550px;margin-bottom: 60px;">
 
 <div style=" display: flex; ">
-
-
-   <div class="crd shadow" *ngFor="let a of adopdata" style="margin-left: 3%;margin-top: 1% ;">
+   <div class="crd shadow" *ngFor="let a of adopdata;index as index" style="margin-left: 3%;margin-top: 1% ;">
+    <a [routerLink]="['/annonce',adopdata[index].id_annonce]" style="text-decoration: none;">
       <div class="class" style=" width:250px; " *ngIf="ind2 < 5">
         <span [hidden]="true">{{fct2}}</span>
          <img [src]="a.image" class="card-img-top im" alt="...">
@@ -91,18 +94,12 @@
          <span class="card-text" ><span class="card-title" style="font-weight: bold;" >Age:</span><span> {{a.age}}</span>ans  </span><br>
          <span class="card-text"> <span class="card-title" style="font-weight: bold;" >  Espèce: </span>  <span style="color:#f4511e ;">{{a.categorie}}</span></span><br>
          <span><span class="card-title" style="font-weight: bold;">Sexe: <i class="fas fa-mars" style="color: rgb(64, 64, 255);" *ngIf="a.sexe=='male' || a.sexe=='male'"></i> <i class="fas fa-venus" style="color: rgb(255, 54, 225);" *ngIf="a.sexe=='femelle' || a.sexe=='Femelle'"></i> </span></span>
-         <br>
-        
+         <br> 
            </div>
       </div>
+    </a>
 
-    
    </div>
-   
-
-   
-
-
 </div>
 <br>
 <button routerLink="/plusAdop" style="margin-left: 90%;" class="button"><span>plus</span></button>
@@ -111,35 +108,24 @@
 <hr style="height:4px;color: black;width: 420px;margin-left: 550px;margin-bottom: 60px;">
 
 <div style=" display: flex; ">
-
-
    <div class="crd shadow" *ngFor="let a of accouplementData" style="margin-left: 3%;margin-top: 1% ;">
       <div class="class" style=" width:250px; " *ngIf="ind < 5">
         <span [hidden]="true">{{fct}}</span>
-         <img [src]="a.image" class="card-img-top im" alt="...">
-         <div class="card-body">
+        <img [src]="a.image" class="card-img-top im" alt="...">
+        <div class="card-body">
           <p class="card-title" style="font-weight: bold;font-size: 25px;color: black; ">{{a.nom}}</p> 
           <span class="card-text" ><span class="card-title" style="font-weight: bold;" >Age:</span><span> {{a.age}}</span>ans  </span><br>
           <span class="card-text"> <span class="card-title" style="font-weight: bold;" >  Espèce: </span>  <span style="color:#f4511e ;">{{a.categorie}}</span></span><br>
           <span><span class="card-title" style="font-weight: bold;">Sexe: <i class="fas fa-mars" style="color: rgb(64, 64, 255);" *ngIf="a.sexe=='male' || a.sexe=='male'"></i> <i class="fas fa-venus" style="color: rgb(255, 54, 225);" *ngIf="a.sexe=='femelle' || a.sexe=='Femelle'"></i> </span></span>
           <br>
-         
-            </div>
+        </div>
       </div>
-
-    
-   </div>
-
+    </div>
 </div>
 <br>
 <button routerLink="/plusAccoup" style="margin-left: 90%;" class="button"><span>plus</span></button>
 
 <br><br>
-
-
-
-
-
 
 
 <app-footer></app-footer>
