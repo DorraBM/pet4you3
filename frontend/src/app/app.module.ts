@@ -12,6 +12,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreateAnonceComponent } from './create-anonce/create-anonce.component';
 import { AnnonceComponent } from './annonce/annonce.component';
+import { CarousselComponent } from './caroussel/caroussel.component';
+import { MoreAdopComponent } from './more-adop/more-adop.component';
+import { MoreAccoupComponent } from './more-accoup/more-accoup.component';
 
 
 
@@ -24,7 +27,11 @@ import { AnnonceComponent } from './annonce/annonce.component';
     Error404Component,
     CreateAnonceComponent,
     AnnonceComponent,
-    TeamComponent
+    TeamComponent,
+    CarousselComponent,
+    MoreAdopComponent,
+    MoreAccoupComponent
+    
   ],
   imports: [
     BrowserModule,

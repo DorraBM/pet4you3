@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5 mb-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10" *ngFor="let a of accouplementData;index as index">
+            
+          
+            <div class="row p-2 bg-white border rounded">
+
+
+                <div class="col-md-3 mt-1"> 
+                    <img [src]="a.image" class=" imgg img-fluid img-responsive rounded product-image "> 
+                </div>
+
+                <div class="col-md-6 mt-1">
+                    <p style="font-weight: bold;font-size: 25px;color: black; ">{{a.nom}}</p>
+                     <span style="font-weight: bold;" >Race:</span><span style="font-weight: bold;color:rgb(49, 49, 255) ;"> {{a.espece}}</span> 
+                    <p >{{a.description}}</p>
+                </div>
+
+
+                <div class="align-items-center align-content-center col-md-3 border-left mt-1">
+                    <div class="d-flex flex-row align-items-center">
+                        <h4 class="mr-1">{{a.age}}</h4><span class="strike-text">ans</span>
+                    </div>
+                    <span><span class="card-title" style="font-weight: bold;">Sexe: <i class="fas fa-mars" style="color: rgb(64, 64, 255);" *ngIf="a.sexe=='male' || a.sexe=='male'"></i> <i class="fas fa-venus" style="color: rgb(255, 54, 225);" *ngIf="a.sexe=='femelle' || a.sexe=='Femelle'"></i> </span></span><br>
+                    <span class="card-text"> <span class="card-title" style="font-weight: bold;" >  Espèce: </span>  <span style="color:#f4511e ;">{{a.categorie}}</span></span><br>
+                    <p style="font-weight: bold;font-size: 20px;color: black; " > {{a.lieu}} </p>
+                    <div class="d-flex flex-column mt-4">
+                        <a [routerLink]="['/annonce',accouplementData[index].id_annonce]" style="text-decoration: none;">
+                        <button class="btn btn-primary btn-sm" type="button">Details</button>
+                    </a>
+                    </div>
+                </div>
+
+             </div>
+            
+       
+       
+        </div>
+    </div>
+</div>

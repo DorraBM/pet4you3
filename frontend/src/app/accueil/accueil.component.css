@@ -4,48 +4,63 @@
 
 .im{
     max-width: 250px;
-     height: 150px; 
+     height: 180px; 
      object-fit: cover;
       border-radius: 8px;
 }
 
 .crd{
-    transition: all 0.7s;   
+    transition: all 0.7s; 
+   
+   
 }
 .crd:hover{
     transform: scale(1.06) ;
     cursor: pointer;
 }
 
-
-.horizontal-scroll-wrapper{
-  
-  display:block;
- 
-  width:600px;
-  max-height:500px;
-  margin:0;
-  background:#abc;
-  overflow-y:auto;
-  overflow-x:hidden;
-  transform:rotate(-90deg) ;
-  
-}
-.horizontal-scroll-wrapper > div{
-  display:block;
-  
-  padding:5px;
-  background:#cab;
-  transform:rotate(90deg) translate(200px);
-  transform-origin: right top;
+.more:hover{
+  cursor: pointer; 
 }
 
-.squares{
-  padding:60px 0 0 0;
+
+.button {
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 20px;
+  padding: 9px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
 }
 
-.squares > div{
-  width:200px;
-  height:200px;
-  margin:100px;
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+

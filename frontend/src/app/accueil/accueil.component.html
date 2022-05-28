@@ -3,7 +3,10 @@
 
 <app-navbar></app-navbar>
 
-<a href="/ajouter">ajouter</a>
+<app-caroussel></app-caroussel>
+
+
+
 <!--
 <div class="container">
  <div class="row" >
@@ -24,21 +27,21 @@
      </div>
  </div>
 </div> -->
-
+<!--
 <h1 style="margin-left: 10%; color:rgb(255, 135, 14);font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Pets for Adoption <i style="color:rgb(62, 62, 255) ;" class="fas fa-paw"></i></h1>
 <br>
-<div class="container-fluid py-2" style=" overflow-x:scroll ;overflow-y: scroll;">
-<div class="d-flex flex-row flex-nowrap"   >
+<div class="container-fluid py-2">
+<div class="d-flex flex-row flex-nowrap overflow-auto"   >
 
   
-   <div class="crd"  *ngFor="let a of annoncedata;index as index" style="margin-left: 2%;margin-top: 1% ; ">
+   <div class="crd  "  *ngFor="let a of annoncedata;index as index" style="margin-left: 2%;margin-top: 1% ; ">
       <div class="class" style="width: 18rem; margin-left: 1%;">
          <img [src]="a.image" class="card-img-top im" alt="...">
            <div class="card-body">
          <h5 class="card-title">{{a.titre}}</h5>
          <p class="card-text">{{a.categorie}}  izdhiah diaz</p>
-         <a href="#" class="btn btn-primary">Go somewhere</a>
-         <a [routerLink]="['/annonce',annoncedata[index].id_annonce]" style="text-decoration: none;">link</a>
+         <a [routerLink]="['/annonce',annoncedata[index].id_annonce]" class="btn btn-primary">Go somewhere</a>
+         <a  style="text-decoration: none;">link</a>
            </div>
       </div>
    </div>
@@ -70,28 +73,59 @@
 
 </div>
 
+<br><br>   -->
+<!-- test 2  -->
+<br><br><br>
+<h1 style="text-align: center; color:rgb(178, 178, 178);font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+  <i  class="fas fa-paw"></i> 
+   Adoption 
+   <i  class="fas fa-paw"></i>
+</h1>
+<hr style="height:4px;color: black;width: 420px;margin-left: 550px;margin-bottom: 60px;">
 
-<!--test scroll-->
-<!--
-<div class="horizontal-scroll-wrapper squares">
-  <div>item 1</div>
-  <div>item 2</div>
-  <div>item 3</div>
-  <div>item 4</div>
-  <div>item 5</div>
-  <div>item 6</div>
-  <div>item 7</div>
-  <div>item 8</div>
+<div style=" display: flex; ">
+   <div class="crd shadow" *ngFor="let a of adopdata;index as index" style="margin-left: 3%;margin-top: 1% ;">
+    <a [routerLink]="['/annonce',adopdata[index].id_annonce]" style="text-decoration: none;">
+      <div class="class" style=" width:250px; " *ngIf="ind2 < 5">
+        <span [hidden]="true">{{fct2}}</span>
+         <img [src]="a.image" class="card-img-top im" alt="...">
+           <div class="card-body">
+         <p class="card-title" style="font-weight: bold;font-size: 25px;color: black; ">{{a.nom}}</p> 
+         <span class="card-text" ><span class="card-title" style="font-weight: bold;" >Age:</span><span> {{a.age}}</span>ans  </span><br>
+         <span class="card-text"> <span class="card-title" style="font-weight: bold;" >  Espèce: </span>  <span style="color:#f4511e ;">{{a.categorie}}</span></span><br>
+         <span><span class="card-title" style="font-weight: bold;">Sexe: <i class="fas fa-mars" style="color: rgb(64, 64, 255);" *ngIf="a.sexe=='male' || a.sexe=='male'"></i> <i class="fas fa-venus" style="color: rgb(255, 54, 225);" *ngIf="a.sexe=='femelle' || a.sexe=='Femelle'"></i> </span></span>
+         <br> 
+           </div>
+      </div>
+    </a>
+
+   </div>
 </div>
--->
+<br>
+<button routerLink="/plusAdop" style="margin-left: 90%;" class="button"><span>plus</span></button>
+<br><br>
+<h1 style="text-align: center; color:rgb(178, 178, 178);font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><i  class="fas fa-paw"></i>  Accouplement  <i  class="fas fa-paw"></i></h1>
+<hr style="height:4px;color: black;width: 420px;margin-left: 550px;margin-bottom: 60px;">
 
+<div style=" display: flex; ">
+   <div class="crd shadow" *ngFor="let a of accouplementData" style="margin-left: 3%;margin-top: 1% ;">
+      <div class="class" style=" width:250px; " *ngIf="ind < 5">
+        <span [hidden]="true">{{fct}}</span>
+        <img [src]="a.image" class="card-img-top im" alt="...">
+        <div class="card-body">
+          <p class="card-title" style="font-weight: bold;font-size: 25px;color: black; ">{{a.nom}}</p> 
+          <span class="card-text" ><span class="card-title" style="font-weight: bold;" >Age:</span><span> {{a.age}}</span>ans  </span><br>
+          <span class="card-text"> <span class="card-title" style="font-weight: bold;" >  Espèce: </span>  <span style="color:#f4511e ;">{{a.categorie}}</span></span><br>
+          <span><span class="card-title" style="font-weight: bold;">Sexe: <i class="fas fa-mars" style="color: rgb(64, 64, 255);" *ngIf="a.sexe=='male' || a.sexe=='male'"></i> <i class="fas fa-venus" style="color: rgb(255, 54, 225);" *ngIf="a.sexe=='femelle' || a.sexe=='Femelle'"></i> </span></span>
+          <br>
+        </div>
+      </div>
+    </div>
+</div>
+<br>
+<button routerLink="/plusAccoup" style="margin-left: 90%;" class="button"><span>plus</span></button>
 
-
-
-<!--Salut c'est Mondher-->
-<!--Bonjour c dorra-->
-<!-- sarra  -->
-<!--maissa kouki-->
+<br><br>
 
 
 <app-footer></app-footer>
