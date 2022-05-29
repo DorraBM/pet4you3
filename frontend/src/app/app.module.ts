@@ -15,6 +15,7 @@ import { AnnonceComponent } from './annonce/annonce.component';
 import { CarousselComponent } from './caroussel/caroussel.component';
 import { MoreAdopComponent } from './more-adop/more-adop.component';
 import { MoreAccoupComponent } from './more-accoup/more-accoup.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -38,7 +39,8 @@ import { MoreAccoupComponent } from './more-accoup/more-accoup.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,10 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./caroussel.component.css']
 })
 export class CarousselComponent implements OnInit {
-
   constructor() { }
 
   ngOnInit(): void {
   }
-
 }

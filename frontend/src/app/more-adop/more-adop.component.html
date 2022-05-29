@@ -21,7 +21,10 @@
                     <span><span class="card-title" style="font-weight: bold;">Sexe: <i class="fas fa-mars" style="color: rgb(64, 64, 255);" *ngIf="a.sexe=='male' || a.sexe=='male'"></i> <i class="fas fa-venus" style="color: rgb(255, 54, 225);" *ngIf="a.sexe=='femelle' || a.sexe=='Femelle'"></i> </span></span><br>
                     <span class="card-text"> <span class="card-title" style="font-weight: bold;" >  Espèce: </span>  <span style="color:#f4511e ;">{{a.categorie}}</span></span><br>
                     <p style="font-weight: bold;font-size: 20px;color: black; " > {{a.lieu}} </p>
-                    <div class="d-flex flex-column mt-4"><button class="btn btn-primary btn-sm" type="button">Details</button>
+                    <div class="d-flex flex-column mt-4">
+                        <a [routerLink]="['/annonce',a.id_annonce]" class="btn btn-primary btn-sm" style="text-decoration: none;">
+                            Details                    </a>
+
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-
+<!-- 
 
 <div id="demo" class="carousel slide " data-interval="500" data-bs-ride="carousel"  >
 
@@ -27,13 +27,41 @@
         </div>
       
     </div> 
-
-
-<!-- <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-<button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div> 
--->
+ -->
+ <ngb-carousel >
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="assets/img/fond1.jpg" alt="PET4YOU banderolle" width="100%">
+    </div>
+    <div class="carousel-caption">
+      <h3>Trouvez l'animal qui vous convient</h3>
+      <p>et qui saura égayer votre quotidien !</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="assets/img/fond2.jpg" alt="Chiot" width="100%">
+    </div>
+    <div class="carousel-caption">
+      <h3 style="-webkit-text-fill-color: black;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: white;
+      font-size:35px
+      ">Ils ont besoins de vous...</h3>
+      <p>Veillez à bien prendre soin d'eux</p>
+    </div>
+  </ng-template>
+  <ng-template ngbSlide>
+    <div class="picsum-img-wrapper">
+      <img src="assets/img/fond3.jpg"  alt="Chatons"  width="100%">
+    </div>
+    <div class="carousel-caption">
+      <h3 style="-webkit-text-fill-color: black;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-stroke-color: white;
+      font-size:35px
+      ">Aggrandissez la famille</h3>
+      <p>en trouvant un partenaire pour votre animal !</p>
+    </div>
+  </ng-template>
+</ngb-carousel>

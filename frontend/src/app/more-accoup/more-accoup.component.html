@@ -27,9 +27,8 @@
                     <span class="card-text"> <span class="card-title" style="font-weight: bold;" >  Espèce: </span>  <span style="color:#f4511e ;">{{a.categorie}}</span></span><br>
                     <p style="font-weight: bold;font-size: 20px;color: black; " > {{a.lieu}} </p>
                     <div class="d-flex flex-column mt-4">
-                        <a [routerLink]="['/annonce',accouplementData[index].id_annonce]" style="text-decoration: none;">
-                        <button class="btn btn-primary btn-sm" type="button">Details</button>
-                    </a>
+                        <a [routerLink]="['/annonce',accouplementData[index].id_annonce]" class="btn btn-primary btn-sm" style="text-decoration: none;">
+                            Details                    </a>
                     </div>
                 </div>
 
