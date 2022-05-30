@@ -109,6 +109,8 @@
 
 <div style=" display: flex; ">
    <div class="crd shadow" *ngFor="let a of accouplementData" style="margin-left: 3%;margin-top: 1% ;">
+    <a [routerLink]="['/annonce', a.id_annonce]" style="text-decoration: none;">
+
       <div class="class" style=" width:250px; " *ngIf="ind < 5">
         <span [hidden]="true">{{fct}}</span>
         <img [src]="a.image" class="card-img-top im" alt="...">
@@ -120,6 +122,7 @@
           <br>
         </div>
       </div>
+      </a>
     </div>
 </div>
 <br>
